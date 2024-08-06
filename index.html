@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <title>Game Selleing</title>
+  <link rel="stylesheet" href="styleee.css">
+  <style>
+    .flash-animation {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-size: 2cm;
+      animation: flash 7s ease-in-out forwards;
+      opacity: 100;
+    }
+    .h5 {
+      font-size: 4cm;
+    }
+   
+    @keyframes flash {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.product {
+  background-color: #33001a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #3a0101;
+  text-align: center;
+  margin: 10px;
+  
+}
+
+.product img {
+  width: 7cm;
+  height: 250px; /* Adjust as needed */
+  border-radius: 10px;
+}
+
+.product h5 {
+  font-size: 1cm;
+  margin-top: -0.20cm;
+}
+
+button {
+  background-color: #001e1fc2;
+  color: rgb(115, 88, 138);
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  
+}
+
+button:hover {
+  background-color: #a04545;
+}
+
+.fa-star {
+  color: rgb(85, 73, 3);
+  font-size: 2px;
+}
+.curved {
+  display: flex; /* Use flexbox to arrange items in a row */
+  gap: 20px; /* Add some gap between each category menu */
+  justify-content: space-around; /* Distribute items evenly with space around */
+  color: rgb(48, 1, 59); /* Change the color to your desired color */
+  font-size: 24px; /* Change the font size to your desired size */
+  
+}
+
+
+
+
+.body {
+  width: 100px;
+  height: 100pw;
+  margin: 0;
+  overflow: hidden;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.product {
+  text-align: center;
+  margin: 20px;
+}
+
+.add-to-cart-btn {
+  /* background-color:  #ffffff; */
+  color: rgb(112, 7, 7);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: left;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  background-color: #eeeded; /* Fallback background color */
+  
+}
+
+.animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.animation iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+.category-menu-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  border: 15px solid rgb(34, 1, 26);
+  border-style: groove;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.category-menu-container::before,
+.category-menu-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(31, 29, 32, 0.8), transparent);
+  animation: raysMove 5s linear infinite;
+}
+
+.category-menu-container::before {
+  left: -100%;
+}
+
+.category-menu-container::after {
+  right: -100%;
+}
+
+@keyframes raysMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.category-menu {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.category-menu li {
+  margin: 0 15px;
+  font-size: 2vw;
+}
+
+.category-menu a {
+  display: flex;
+  padding: 15px 25px; /* Increased padding for a better touch target */
+  background-color: #4b1b40; /* Base background color */
+  color: rgb(194, 179, 179);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.2s; /* Added box-shadow transition */
+  justify-content: center;
+  align-items: center;
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+.category-menu a:hover {
+  background-color: #6a2a5b;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover for depth */
+}
+
+@media (max-width: 768px) {
+  .category-menu li {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-menu li {
+    font-size: 4vw;
+    margin: 0 5px;
+  }
+}
+
+
+
+  
+  
+
+.gun1 {
+  /* border: 1px solid rgb(7, 6, 6); /* Corrected to 'solid' */
+  height: auto;
+  width: auto;
+  display: flex; /* Added for centering 2cm in all*/
+  justify-content: flex-end; /* Change to position horizontally */
+  align-items: auto; /* Change to position vertically */
+}
+
+.gun1 {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 4cm; /* Set height as needed */
+  width: 100%; /* Full width */
+  margin: 0 auto; /* Center container itself */
+}
+
+.gun1 img {
+  max-width: 4cm; /* Ensures the image doesn't exceed the container */
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Allow for natural width */
+}
+
+.flash-animation {
+  animation: flash 8s infinite;
+}
+
+
+  </style>
+</head>
+<body>
+
+
+
+<!-- <div class="animation">
+  <iframe src='https://my.spline.design/chips-5deb90068168851d1c8d7eb08fd1d044/' frameborder='0' width='100%' height='100%'></iframe>
+</div> -->
+
+<div class="flash-animation" id="flashMessage">
+  Welcome to our store
+</div>
+<div class="gun1">
+<h2>
+  <img src="gun1.svg">
+</h2>
+</div>
+
+<a href="add to cart.html" class="add-to-cart-btn">
+  <button>
+    <!-- Your button content goes here -->
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 20">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm1-4H5m0 0L3 4m0 0h5.501M3 4l-.792-3H1m11 3h6m-3 3V1 "></path>
+      Hello
+    </svg>
+    Cart
+  </button>
+</a>
+
+<div class="curved">
+  <h1>Cheap Games Seller</h1>
+</div>
+<div class="category-menu-container">
+  <div class="category-menu">
+    <ul>
+      <li><a href="#" onclick="filterProducts('shooter')">All</a></li>
+      <!-- Add more categories as needed -->
+    </ul>
+  </div>
+
+  <div class="category-menu category-menu1">
+    <ul>
+      <li><a href="forza horizon 5.html" onclick="filterProducts('Car Raceing')">Car Racing</a></li>
+      <!-- Add more categories as needed -->
+    </ul>
+  </div>
+
+  <div class="category-menu category-menu2">
+    <ul>
+      <li><a href="call of duty noder walfare 3.html" onclick="filterProducts('Shooter game')">Shooter games</a></li>
+      <!-- Add more categories as needed -->
+    </ul>
+  </div>
+
+  <div class="category-menu category-menu3">
+    <ul>
+      <li><a href="Withcher 3.html" onclick="filterProducts('Action')">Action</a></li>
+      <!-- Add more categories as needed -->
+    </ul>
+  </div>
+
+  <div class="category-menu category-menu4">
+    <ul>
+      <li><a href="hmmm.html" onclick="filterProducts('Gta v')">GTA V</a></li>
+      <!-- Add more categories as needed -->
+    </ul>
+  </div>
+
+  <div class="category-menu category-menu5">
+    <ul>
+      <li><a href="Palword.html" onclick="filterProducts('Palworld')">Palworld</a></li>
+      <!-- Add more categories as needed -->
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+  <div class="product">
+    <img src="GTAV.jpg" alt="Product 1">
+    <h5>₹149</h5>
+    <button onclick="window.location.href = 'hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'Enquire.html';">Enquire</button>
+    <ul>
+ 
+    </ul> 
+
+
+</div>
+
+
+  
+  <div class="container">
+    <div class="product">
+      <img src="palworld.jpg" alt="Product 1">
+      <h5>₹199</h5>
+      <button onclick="window.location.href = 'Palword.html';">Buy Now</button>
+      <button onclick="window.location.href = 'Enquire.html';">Enquire</button>
+      <ul>
+        
+      </ul>
+    </div> 
+  </div>
+  
+  <div class="container">
+    <div class="product">
+      <img src="call of duty 3.jpg" alt="Product 3">
+      <h5>₹199</h5>
+      <button onclick="window.location.href = 'call of duty noder walfare 3.html';">Buy Now</button>
+      <button onclick="window.location.href = 'Enquire.html';">Enquire</button>
+      <ul>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="product">
+      <img src="Forza Horizon 5.jpg" alt="Product 4">
+      <h5>₹99</h5>
+      <button onclick="window.location.href = 'Forza Horizon 5.html';">Buy Now</button>
+      <button onclick="window.location.href = 'Enquire.html';">Enquire</button>
+      <ul>
+    
+      </ul>
+    </div>
+  </div>
+  
+
+
+
+
+
+  
+
+
+<div class="container">
+  <div class="product">
+    <img src="Cyberfunk.jpg" alt="Product 5">
+    <h5>₹199</h5>
+    <button onclick="window.location.href = 'cyberfunk.html';">Buy Now</button>
+    <button onclick="window.location.href = 'Enquire.html';">Enquire</button>
+    <ul>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="product">
+    <img src="Witcher 3.jpg" alt="Product 6">
+    <h5>₹100</h5>
+    <button onclick="window.location.href = 'Withcher 3.html';">Buy Now</button>
+    <button onclick="window.location.href = 'Enquire.html';">Enquire</button>
+    <ul>
+  
+    </ul>
+  </div>
+</div>
+
+
+<!--<div class="container">
+  <div class="product">
+    <img src="G:\CCDS\gta.jpg" alt="Product 7">
+    <h5>$100</h5>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Enquire</button>
+    <ul>
+      <li><i class="fa fa-star checked"></i></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="product">
+    <img src="G:\CCDS\gta.jpg" alt="Product 8">
+    <h5>$100</h5>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Enquire</button>
+    <ul>
+      <li><i class="fa fa-star checked"></i></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="product">
+    <img src="G:\CCDS\gta.jpg" alt="Product 9">
+    <h5>$100</h5>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Add to cart</button>
+    <ul>
+      <li><i class="fa fa-star checked"></i></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="product">
+    <img src="G:\CCDS\gta.jpg" alt="Product 10">
+    <h5>$100</h5>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Add to cart</button>
+    <ul>
+      <li><i class="fa fa-star checked"></i></li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="product">
+    <img src="G:\CCDS\gta.jpg" alt="Product 10">
+    <h5>$100</h5>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Add to cart</button>
+    <ul>
+      <li><i class="fa fa-star checked"></i></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="product">
+    <img src="G:\CCDS\gta.jpg" alt="Product 10">
+    <h5>$100</h5>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Buy Now</button>
+    <button onclick="window.location.href = 'G:/CCDS/hmmm.html';">Add to cart</button>
+    <ul>
+      <li><i class="fa fa-star checked"></i></li>
+    </ul>
+  </div>
+</div>
+<script>
+  // Function to filter products based on category
+  function filterProducts(category) {
+    var products = document.querySelectorAll('.product-grid .container');
+    
+    products.forEach(function(product) {
+      product.style.display = 'none';
+      if (category === 'all' || product.classList.contains(category)) {
+        product.style.display = 'block';
+      }
+    });
+  }
+</script>
+  
+
+
+
+
+<script>
+  // Remove the flash message after 3 seconds
+  setTimeout(function() {
+    var flashMessage = document.getElementById('flashMessage');
+    flashMessage.parentNode.removeChild(flashMessage);
+  }, 10000); // 3000 milliseconds = 3 seconds
+</script> -->
+
+
+
+</body>
+</html>
